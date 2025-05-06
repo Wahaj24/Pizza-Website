@@ -1,24 +1,29 @@
 import React from 'react';
+import SectionContainer from '../../layouts/SectionContainer';
+import CardLayout from '../../layouts/CardLayout';
+import TestimonialBox from './TestimonialBox';
 
 const Testimonials = () => {
+  const testimonials = [
+    { id: 1, customerName: 'John Doe', feedback: 'Best pizza I ever had!' },
+    { id: 2, customerName: 'Jane Smith', feedback: 'Amazing taste and fast delivery!' },
+    { id: 3, customerName: 'Michael Brown', feedback: 'Highly recommend their BBQ Chicken pizza!' },
+  ];
+
   return (
-    <section className="bg-gray-100 py-16">
-      <h2 className="text-3xl font-bold text-center text-red-600">What Our Customers Say</h2>
-      <div className="max-w-6xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white p-6 shadow-md rounded-lg">
-          <p className="text-gray-700">
-            "The best pizza I've ever had! The crust was perfect, and the toppings were fresh."
-          </p>
-          <p className="mt-4 font-bold">- John Doe</p>
-        </div>
-        <div className="bg-white p-6 shadow-md rounded-lg">
-          <p className="text-gray-700">
-            "Fast delivery and amazing taste. I highly recommend Pizza Corner!"
-          </p>
-          <p className="mt-4 font-bold">- Jane Smith</p>
-        </div>
-      </div>
-    </section>
+    <SectionContainer>
+      <h2 className="text-3xl font-bold text-center text-red-600 mb-12">What Our Customers Say</h2>
+      <CardLayout>
+        {testimonials.map((testimonial) => (
+          <TestimonialBox
+            key={testimonial.id}
+            id={testimonial.id}
+            customerName={testimonial.customerName}
+            feedback={testimonial.feedback}
+          />
+        ))}
+      </CardLayout>
+    </SectionContainer>
   );
 };
 

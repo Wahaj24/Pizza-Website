@@ -1,7 +1,8 @@
 import React from 'react';
-
+import SectionContainer from '../../layouts/SectionContainer';  
 const HeroSection = () => {
   return (
+    <SectionContainer>
     <section id="home-section" className="bg-red-600 text-white text-center py-20">
       <h1 className="text-5xl font-bold">Welcome to Pizza Corner</h1>
       <p className="text-lg mt-4">The best pizza in town, delivered fresh to your door!</p>
@@ -11,7 +12,9 @@ const HeroSection = () => {
       >
         Order Now
       </a>
+      
     </section>
+    </SectionContainer>
   );
 };
 
